@@ -1,0 +1,58 @@
+/*
+ * Copyright 2012 The Closure Library Authors. All Rights Reserved.
+ *
+ * Use of this source code is governed by the Apache License, Version 2.0.
+ * See the COPYING file for details.
+ */
+
+/*
+ * styling for goog.ui.menuBar and child buttons.
+ *
+ * @author tvykruta@google.com (Tomas Vykruta)
+ */
+
+
+.goog-menubar {
+  cursor: default;
+  outline: none;
+  position: relative;
+  white-space: nowrap;
+  background: #fff;
+  padding: 0px 45px 5px 45px;
+}
+
+.goog-menubar .goog-menu-button {
+  padding: 1px 1px;
+  margin: 0px;
+  outline: none;
+  border: none;
+  background: #fff;
+  /* @alternate */ border: 1px solid #fff;
+}
+
+.goog-menubar .goog-menu-button-dropdown {
+  display: none;
+}
+
+.goog-menubar .goog-menu-button-outer-box {
+  border: none;
+}
+
+.goog-menubar .goog-menu-button-inner-box {
+  border: none;
+}
+
+.goog-menubar .goog-menu-button-hover {
+  border: 1px solid #ddd;
+  box-shadow: 1px 1px 1px #ddd;
+}
+
+.goog-menubar .goog-menu-button-open {
+  background: #e5e5e5;
+  border: 1px solid #ddd;
+  box-shadow: 1px 1px 1px #ddd;
+}
+
+.goog-menubar .goog-menu-button-disabled {
+  color: #ccc;
+}

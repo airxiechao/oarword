@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="author" content="airxiechao@gmail.com">
+
+    <title>OAR | 编辑Word文档</title>
+
+    <script type="text/javascript" src="js/external/jquery.js"></script>
+    <script type="text/javascript" src="js/external/jquery.ui.core.js"></script>
+    <script type="text/javascript" src="js/external/jquery.ui.widget.js"></script>
+    <script type="text/javascript" src="js/external/jquery.fiji.ticker.js"></script>
+    <script src="js/config.js" ></script>
+
+    <script type="text/javascript">
+        function init() {
+            var xmlhttp = new XMLHttpRequest();
+
+            xmlhttp.onreadystatechange = function()
+            {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+                {
+                    var resJSON = xmlhttp.responseText;
+                    var arr = JSON.parse(resJSON);
+
+                    if( arr.length <= 0 ) {
+                        return;
+                    }
+
+                    document.getElementById("ticker").innerHTML = '';
+
+                    for( var i = 0; i < arr.length; ++i ) {
+                        var obj = arr[i];
+
+                        var li = document.createElement('li');
+                        var span1 = document.createElement('span');
+                        var br = document.createElement('br');
+                        var span2 = document.createElement('span');
+                        span2.className = 'ago';
+
+                        li.appendChild(span1);
+                        li.appendChild(br);
+                        li.appendChild(span2);
+
+                        /*
+                        var xmlhttp2 = new XMLHttpRequest();
+                        xmlhttp2.onreadystatechange = function()
+                        {
+                            if (xmlhttp2.readyState == 4 && xmlhttp.status == 200)
+                            {
+                                eval(xmlhttp2.responseText);
+                                span1.textContent = '正在编辑『' + obj.file + '』';
+                                var location = remote_ip_info.city;
+                                span2.textContent = obj.time + ' ';
+                                if( location ) {
+                                    span2.textContent += '在' +  location
+                                }
+                                document.getElementById("ticker").appendChild(li);
+                            }
+                        }
+
+                        xmlhttp2.open("GET","http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js&ip=" + obj.ip,false);
+                        xmlhttp2.send();
+                        */
+
+                        span1.textContent = '正在编辑『' + obj.file + '』';
+                        span2.textContent = obj.time + ' 在' + obj.ip.substring(0, obj.ip.lastIndexOf('.') + 1) + '*';
+
+                        document.getElementById("ticker").appendChild(li);
+                    }
+                }
+            }
+
+            xmlhttp.open("GET",config.appbase + "/RecentFileName",true);
+            xmlhttp.send();
+        }
+
+        $(function() {
+            var i = 0;
+            $("#ticker").ticker({
+                initialTimeout: 1000,
+                mouseOnTimeout: 4000,
+                mouseOffTimeout: 3000,
+                scrollTime: 1200,
+                fadeTime: 1000,
+                fixContainer: true,
+                nextItem: function(lastItem) {
+                    return lastItem;
+                }
+            });
+        })
+    </script>
+
+    <style type="text/css">
+        body {
+            width: 100%;
+            height: 100%;
+            margin:0;
+            padding:0;
+
+        }
+
+        #logo {
+            font-family: Arial;
+            font-style: italic;
+            font-size: 11px;
+            font-weight: bold;
+            position: absolute;
+            widht: 20px;
+            height: 20px;
+            line-height: 20px;
+            right: 10px;
+        }
+
+        #main-top {
+            position: absolute;
+            background-color: #ebebeb;
+            width: 100%;
+            height: 50%;
+            box-shadow: 0px 0px 3px 1px #ccc;
+        }
+
+        #toppage {
+            position: absolute;
+            bottom: 0px;
+            height: 190px;
+            width: 840px;
+            left: 50%;
+            margin-left: -420px;
+            background-color: #fff;
+            box-shadow: 0px 0px 3px 1px #ccc;
+        }
+
+        #main-bottom {
+            position: absolute;
+            background-color: #fff;
+            top: 50%;
+            width: 100%;
+            height: 50%;
+            box-shadow: 0px 0px 3px 1px #ccc;
+        }
+
+        #bottompage {
+            position: absolute;
+            top: 0px;
+            height: 170px;
+            width: 840px;
+            left: 50%;
+            margin-left: -420px;
+            background-color: #fff;
+        }
+
+        #toppageLU {
+            position: absolute;
+            width: 31px;
+            height: 31px;
+            left: 50px;
+            top: 50px;
+            border-bottom: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+        }
+
+        #toppageRU {
+            position: absolute;
+            width: 31px;
+            height: 31px;
+            right: 50px;
+            top: 50px;
+            border-bottom: 1px solid #ccc;
+            border-left: 1px solid #ccc;
+        }
+
+        #toppageCenter {
+            position: absolute;
+            width: 676px;
+            height: 89px;
+            top: 81px;
+            margin: 0px 81px;
+        }
+
+        #usebtn {
+            position: absolute;
+            right: 85px;
+            top: 15px;
+            width: 100px;
+            height: 35px;
+            font-size: 13px;
+            background-color: #f5f5f5;
+            border: 1px solid #ccc;
+            font-weight: bold;
+            box-shadow: 1px 1px 1px 0px #ccc;
+            cursor: pointer;
+        }
+
+        #usebtn:hover {
+            background-color: #eee;
+        }
+
+        #usebtn:active {
+            top: 16px;
+            right: 84px;
+            box-shadow: 1px 1px 1px 0px #fff;
+        }
+
+        #intro {
+            border-left: 2px solid #ebebeb;
+            position: absolute;
+            width: 323px;
+            height: 88px;
+            right: 0px;
+            padding: 0px 5px 5px 10px;
+        }
+
+        #event {
+            position: absolute;
+            width: 334px;
+            height: 88px;
+            left: 0px;
+            padding: 0px 0px 5px 0px;
+        }
+
+        #intro .title {
+            font-size: 17px;
+            font-weight: bold;
+            font-family: Arial;
+            line-height: 25px;
+        }
+
+        #intro .content {
+            font-size: 13px;
+        }
+
+        #intro .email {
+            font-size: 13px;
+            font-family: Arial;
+            vertical-align: top;
+            line-height: 21px;
+            margin-left: 5px;
+        }
+
+        #ticker {
+            height: 88px;
+            width: 336px;
+        }
+
+        #ticker li {
+            display:block;
+            border-bottom: 1px dotted #ccc;
+            padding: 2px 0px 0px 0px;
+            margin: 0px;
+            height: 42px;
+            line-height: 20px;
+            font-family: Arial;
+            font-size: 13px;
+            white-space: nowrap;
+        }
+
+        #ticker li .ago {
+            font-size: 11px;
+            color: #ccc;
+        }
+
+        .fiji-ticker {
+            margin: 0px;
+            padding: 0px;
+            overflow: hidden
+        }
+
+        .fiji-ticker ul {
+            padding: 0px;
+            margin: 0px
+        }
+    </style>
+
+</head>
+<body onload="init()">
+    <div id="main-top">
+        <div id="toppage">
+            <div id="toppageLU"></div>
+            <div id="toppageRU"></div>
+            <div id="toppageCenter">
+                <div id="event">
+                    <ul id="ticker">
+                        <li>
+                            <span>正在编辑『哈利波特与计时器』</span><br/>
+                            <span class="ago">2013-08-07 21:34:44 220.112.182.236</span>
+                        </li>
+                        <li>
+                            <span>正在编辑『112只大猩猩绝食』</span><br/>
+                            <span class="ago">2013-08-07 21:34:40 123.56.48.202</span>
+                        </li>
+                    </ul>
+                </div>
+                <div id="intro">
+                    <span class="title">OAR</span><br/>
+                    <span class="content">OAR（船桨）是一款运行在浏览器<a href="https://www.google.com/intl/zh-CN/chrome/browser/" target="_blank" style="text-decoration: none" title="不好意思！现在只有Google Chrome浏览器可以用！"><span style='color: #cc0000; font-weight: bold; vertical-align: top; font-size: xx-small '>①</span></a>中的Word文档编辑器，提供随时随地的文档编辑服务！</span><br/>
+                    <div class='feedback' style="margin-top: 7px;"><img src="img/gmail_icon.png" alt="反馈信箱" /><span class="email">airxiechao@gmail.com</span></div>
+                    <!--<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=893646097&site=qq&menu=yes"><img style="margin-top: 7px"border="0" src="http://wpa.qq.com/pa?p=2:893646097:51" alt="反馈QQ" title="反馈QQ"/></a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="main-bottom">
+        <div id="logo">airXiechao Present</div>
+        <div id="bottompage">
+            <form action="oarword.html">
+            <input id="usebtn" type="submit" value="新建文档"/>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
