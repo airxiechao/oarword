@@ -22,9 +22,9 @@ A Javascript Doc/Docx Editor in Browser
 
 2.Config
 
-  2.1 js config:  oarword-js/js/config.js
+    2.1 js config:  oarword-js/js/config.js
   
-  2.2 java config: oarword-java/src/com/airxiechao/oarword/Config.java
+    2.2 java config: oarword-java/src/com/airxiechao/oarword/Config.java
   
 3.Run
 
