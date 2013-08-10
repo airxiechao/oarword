@@ -91,6 +91,35 @@
             -webkit-user-select: none;
         }
 
+        #loadlayer {
+            background-color: #ccc;
+            opacity: 0.5;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            -webkit-user-select: none;
+            z-index: 1000;
+        }
+
+        #loadtext {
+            position: absolute;
+            background-color: #000000;
+            font-size: 13px;
+            font-weight: bold;
+            margin-left: -50px;
+            margin-top: -20px;
+            top: 50%;
+            left: 50%;
+            color: #fff;
+            width: 100px;
+            height: 25px;
+            line-height: 25px;
+            -webkit-user-select: none;
+            border-radius: 3px;
+            text-align: center;
+            box-shadow: 0px 0px 1px 1px #000;
+        }
+
     </style>
     <title></title>
 </head>
@@ -103,5 +132,11 @@
     <div id='oar-ruler'></div>
     <div id='oar-container'></div>
 </div>
+
+<script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ff13b15c44a6659c0546a8f55b471043c' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
 </body>
 </html>
