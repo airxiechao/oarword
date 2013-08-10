@@ -1,7 +1,7 @@
 oarword（船桨Word）
 =======
 
-A Javascript Doc/Docx Editor in Browser
+A Javascript Doc/Docx Editor in Browser(Chrome only now!)
 
 1.Component
 
