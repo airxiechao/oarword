@@ -1,5 +1,7 @@
 oarword（船桨Word）
 =======
+我觉得开源项目应该去推动一些有意义的东西，这个东西除了验证自己编程能力外好像没有什么意义，就不维护了！
+=======
 
 A Javascript Doc/Docx Editor in Browser(Chrome only now!)
 
@@ -30,4 +32,4 @@ A Javascript Doc/Docx Editor in Browser(Chrome only now!)
 
 4.Contact
 
-  Email: airxiechao@gmail.com
+  Email: airxiechao@me.com
