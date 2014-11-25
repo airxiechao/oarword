@@ -1,4 +1,4 @@
-oarword（船桨Word）
+oarword
 =======
 
 A Javascript Doc/Docx Editor in Browser(Chrome only now!)
