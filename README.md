@@ -1,7 +1,7 @@
 oarword
 =======
 
-A Javascript Doc/Docx Editor in Browser(Chrome only now!) 2013.6
+A Javascript Doc/Docx Editor in Browser(Chrome only now!)
 
 1.Component
 
@@ -31,3 +31,5 @@ A Javascript Doc/Docx Editor in Browser(Chrome only now!) 2013.6
 4.Contact
 
   Email: airxiechao@qq.com
+
+2013.6
