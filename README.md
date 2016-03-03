@@ -1,6 +1,6 @@
 oarword
 =======
-*There will be a new version of oarword - [oarword2](https://github.com/airxiechao/oarword2)*
+*2013.6*
 -------
 A Javascript Doc/Docx Editor in Browser(Chrome only now!)
 
