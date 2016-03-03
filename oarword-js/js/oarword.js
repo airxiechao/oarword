@@ -6287,23 +6287,25 @@ RangeSelector.clearRangeOverlay = function() {
 
     // line in page or table
     var para = goog.dom.getParentElement(this.foLine);
-    var cell = goog.dom.getParentElement(para);
-    var pc = goog.dom.getParentElement(cell);
+    if(para){
+        var cell = goog.dom.getParentElement(para);
+        var pc = goog.dom.getParentElement(cell);
 
-    if( pc.tagName.toLowerCase() == 'td' ) {
-        var nextLine = this.foLine.getNextLineThroughPageTdAvoidTable();
-        while( nextLine ) {
-            if( nextLine.hasOverlay() ) {
-                nextLine.ClearOverlay();
+        if( pc.tagName.toLowerCase() == 'td' ) {
+            var nextLine = this.foLine.getNextLineThroughPageTdAvoidTable();
+            while( nextLine ) {
+                if( nextLine.hasOverlay() ) {
+                    nextLine.ClearOverlay();
+                }
+
+                nextLine = nextLine.getNextLineThroughPageTdAvoidTable();
             }
-
-            nextLine = nextLine.getNextLineThroughPageTdAvoidTable();
-        }
-    } else {
-        var nextLine = this.foLine.getNextLineThroughPageTdAvoidTable();
-        while( nextLine && nextLine.hasOverlay() ) {
-            nextLine.ClearOverlay();
-            nextLine = nextLine.getNextLineThroughPageTdAvoidTable();
+        } else {
+            var nextLine = this.foLine.getNextLineThroughPageTdAvoidTable();
+            while( nextLine && nextLine.hasOverlay() ) {
+                nextLine.ClearOverlay();
+                nextLine = nextLine.getNextLineThroughPageTdAvoidTable();
+            }
         }
     }
 
