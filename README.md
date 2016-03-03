@@ -1,8 +1,7 @@
 oarword
 =======
-*2013.6*
--------
-A Javascript Doc/Docx Editor in Browser(Chrome only now!)
+
+A Javascript Doc/Docx Editor in Browser(Chrome only now!) 2013.6
 
 1.Component
 
