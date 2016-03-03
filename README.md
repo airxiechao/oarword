@@ -31,4 +31,4 @@ A Javascript Doc/Docx Editor in Browser(Chrome only now!)
 
 4.Contact
 
-  Email: airxiechao@me.com
+  Email: airxiechao@qq.com
