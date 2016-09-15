@@ -6361,7 +6361,9 @@ InputBox.imeHandler = function(e) {
             goog.dom.removeNode(G.inputbox.dummyInner);
             G.inputbox.dummyInner = null;
         }
-    } if(e.type == 'updateIme') {
+        
+        InputBox.inputHandler.bind(G.inputbox)();
+    } else if(e.type == 'updateIme') {
     }
 }
 InputBox.inputHandler = function(e) {
