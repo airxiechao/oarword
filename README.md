@@ -13,7 +13,7 @@ A Javascript Doc/Docx Editor in Browser(Chrome only now!)
     
     1.2.2 includs: docx4j-2.8.1,fileupload-1.3,httpclient4.2.5,dom4j-1.6.1,gson-2.2.4,jodconverter(modified)-3b4,pdfbox-1.8.2
  
-  1.3 libreoffice 4: run as service
+  1.3 libreoffice 4: sudo apt install libreoffice, then run as service
 
     1.3.1 start command: sudo soffice -headless -accept="socket,host=127.0.0.1,port=8100;urp;" -nofirststartwizard
 
