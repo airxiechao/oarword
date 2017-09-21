@@ -26,20 +26,24 @@ A Javascript Doc/Docx Editor in Browser(Chrome only now!)
   
     2.2 java config: oarword-java/src/com/airxiechao/oarword/Config.java
     
-3. Deploy
 
-    3.1 create 'oarword' directory as WEBROOT
-    
+3.Deploy
+
+    3.1 create 'oarword' directory as WEBROOT
+
     3.2 copy files in 'oarword-js' into 'oarword'
-    
+
     3.3 copy 'WEB-INF' and 'META-INF' in 'oarword-java' into 'oarword'
-    
+
     3.4 build oarword-java's project and copy 'classes' into 'oarword/WEB-INF'
-    
+
     3.5 unzip 'oarword-depend-lib.zip' and copy 'lib' into 'oarword/WEB-INF'
-    
+
     3.6 create directory 'upload' and 'tmp' in 'oarword', make sure these directories are writable
+    
+    3.7 deploy 'oarword' in Tomcat8
   
+
 4.Run
 
 5.Contact
