@@ -5,7 +5,7 @@ A Javascript Doc/Docx Editor in Browser(Chrome only now!)
 
 1.Component
 
-  1.1 oarword-js: js files, should put into WEBROOT
+  1.1 oarword-js: static files
   
   1.2 oarword-java: servlets
     
