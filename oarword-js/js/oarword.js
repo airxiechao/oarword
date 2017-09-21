@@ -1920,7 +1920,12 @@ PrintViewDialog.run = function() {
         var resText = this.getResponseText();
         if( resText != null && resText != '' && resText != 'error' ) {
             var win = window.open(config.appbase + '/' + resText, '_blank');
-            win.focus();
+            if(win){
+                win.focus();
+            }else{
+                alert('Please turn off Pop-up blocker!');
+            }
+            
         } else {
             var errDlg = new InfoDialog();
             errDlg.info.style.color = '#f00';
