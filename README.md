@@ -9,15 +9,15 @@ A Javascript Doc/Docx Editor in Browser(Chrome only now!)
   
   1.2 oarword-java: servlets
     
-    1.2.1 depend jars download: http://pan.baidu.com/share/link?shareid=327061688&uk=2432909170
+    1.2.1 dependent jars download: http://pan.baidu.com/share/link?shareid=327061688&uk=2432909170
     
     1.2.2 includs: docx4j-2.8.1,fileupload-1.3,httpclient4.2.5,dom4j-1.6.1,gson-2.2.4,jodconverter(modified)-3b4,pdfbox-1.8.2
  
   1.3 libreoffice 4: run as service
 
-    1.3.1 start command: soffice -headless -accept="socket,host=127.0.0.1,port=8100;urp;" -nofirststartwizard
+    1.3.1 start command: sudo soffice -headless -accept="socket,host=127.0.0.1,port=8100;urp;" -nofirststartwizard
 
-    1.3.2 stop command: soffice -headless -unaccept="socket,host=127.0.0.1,port=8100;urp;" -nofirststartwizard
+    1.3.2 stop command: sudo soffice -headless -unaccept="socket,host=127.0.0.1,port=8100;urp;" -nofirststartwizard
     
 
 2.Config
@@ -25,10 +25,24 @@ A Javascript Doc/Docx Editor in Browser(Chrome only now!)
     2.1 js config:  oarword-js/js/config.js
   
     2.2 java config: oarword-java/src/com/airxiechao/oarword/Config.java
-  
-3.Run
+    
+3. Deploy
 
-4.Contact
+    3.1 create 'oarword' directory as WEBROOT
+    
+    3.2 copy files in 'oarword-js' into 'oarword'
+    
+    3.3 copy 'WEB-INF' and 'META-INF' in 'oarword-java' into 'oarword'
+    
+    3.4 build oarword-java's project and copy 'classes' into 'oarword/WEB-INF'
+    
+    3.5 unzip 'oarword-depend-lib.zip' and copy 'lib' into 'oarword/WEB-INF'
+    
+    3.6 create directory 'upload' and 'tmp' in 'oarword', make sure these directories are writable
+  
+4.Run
+
+5.Contact
 
   Email: airxiechao@qq.com
 
