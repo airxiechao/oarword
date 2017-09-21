@@ -6609,8 +6609,16 @@ Doc.getTargetFromPosition = function(x0, y0) {
         }
 
     } else if(pta.className == 'oar-table') {
-        var cell = pta.getCellFromPosition(x0, y0);
-        var pt2 = cell.getPTAFromPosition(x0, y0);
+        while(true){
+            var cell = pta.getCellFromPosition(x0, y0);
+            var pt2 = cell.getPTAFromPosition(x0, y0);
+            if(pt2.className == 'oar-table'){
+                pta = pt2;
+            }else{
+                break;
+            }
+        }
+        
         var line = pt2.getLineFromPosition(x0, y0);
         block = line.getInlineFromPosition(x0, y0);
         if( block.className && block.className == 'oar-inline-eop' ) {
