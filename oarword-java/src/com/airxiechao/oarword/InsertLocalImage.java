@@ -97,7 +97,7 @@ public class InsertLocalImage extends HttpServlet {
 	      	}
 			
 			if( file != null && new ImageIcon(file.getAbsolutePath()).getIconWidth() != -1 ) {
-	    		String imgPath = Config.appBase + "/upload/" + file.getName();
+	    		String imgPath = Config.getAppBase() + "/upload/" + file.getName();
 	    		response.setCharacterEncoding("UTF-8");
 	    		response.getWriter().print(imgPath);
 			} else {

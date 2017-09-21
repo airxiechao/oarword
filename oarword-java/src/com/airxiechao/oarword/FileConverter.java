@@ -36,8 +36,8 @@ public class FileConverter {
 
 	  officeManager = new ExternalOfficeManagerConfiguration()
 	  		.setConnectOnStart(true)
-	  		.setHost(Config.libreOfficeServer)
-	  		.setPortNumber(Config.libreOfficePort)
+	  		.setHost(Config.getLibreOfficeServer())
+	  		.setPortNumber(Config.getLibreOfficePort())
 	  		.buildOfficeManager();
 	  
 	  officeManager.start();

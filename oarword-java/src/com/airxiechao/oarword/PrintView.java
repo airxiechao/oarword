@@ -175,7 +175,7 @@ public class PrintView extends HttpServlet {
 	            String imgPath = fileDirStr + "/" + i + ".jpeg";
 	            File imgFile = new File(servletPath + imgPath);
 	            ImageIO.write(pdfPage.convertToImage(), "jpeg", imgFile);
-	            imgPages.add(Config.appBase + "/" + imgPath);
+	            imgPages.add(Config.getAppBase() + "/" + imgPath);
 	        }
 	        
 	        // generate printview html

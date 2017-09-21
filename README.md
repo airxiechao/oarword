@@ -24,7 +24,7 @@ A Javascript Doc/Docx Editor in Browser(Chrome only now!)
 
     2.1 js config:  oarword-js/js/config.js
   
-    2.2 java config: oarword-java/src/com/airxiechao/oarword/Config.java
+    2.2 java config: oarword-java/src/config.properties
     
 
 3.Deploy

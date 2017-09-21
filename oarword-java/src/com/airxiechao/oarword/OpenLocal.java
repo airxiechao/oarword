@@ -334,7 +334,7 @@ public class OpenLocal extends HttpServlet {
     										drawingStyleEle.addAttribute("height", imgHeight + "");
     										
     										// save drawing bin to local and return a URL path
-    	    								String drawingURL = Config.appBase + "/upload" + imgPath;
+    	    								String drawingURL = Config.getAppBase() + "/upload" + imgPath;
     	    								drawingContentEle.addText(drawingURL);
     										
     										break;
