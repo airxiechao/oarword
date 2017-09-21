@@ -1143,11 +1143,11 @@ var Toolbar = function() {
 
     var insertImgBtn = new goog.ui.ToolbarButton(insertImgIcon);
     toolbar.addChild(insertImgBtn, true);
-    var insertImgDialog = new InsertImgDialog();
-
+    
     goog.events.listen(insertImgBtn.getElement(),
         goog.events.EventType.CLICK,
         function(e) {
+            var insertImgDialog = new InsertImgDialog();
             insertImgDialog.setVisible(true);
         }
     );
