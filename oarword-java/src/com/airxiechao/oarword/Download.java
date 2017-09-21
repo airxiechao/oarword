@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigInteger;
 import java.net.URLDecoder;
+import java.net.URLEncoder;
 import java.util.Enumeration;
 import java.util.Iterator;
 
@@ -95,7 +96,7 @@ public class Download extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		sessionId = request.getSession().getId();
 		servletPath = getServletContext().getRealPath("/");
-		String filePara = new String(request.getParameter("file").getBytes("ISO-8859-1"), "UTF-8");
+		String filePara = request.getParameter("file");
 
 		try {
 			String filePath = servletPath + filePara;
@@ -119,8 +120,7 @@ public class Download extends HttpServlet {
 	        String fileName = file.getName();
 
 	        // sets HTTP header
-	        response.setHeader("Content-Disposition", "attachment; filename=\"" + 
-	        		new String(fileName.getBytes("UTF-8"), "ISO-8859-1") + "\"");
+	        response.setHeader("Content-Disposition", "attachment; filename=\"" + URLEncoder.encode(fileName, "UTF-8") + "\"");
 	        
 	        byte[] byteBuffer = new byte[BUFSIZE];
 	        DataInputStream in = new DataInputStream(new FileInputStream(file));

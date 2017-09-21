@@ -43,7 +43,8 @@ A Javascript Doc/Docx Editor in Browser(Chrome only now!)
     
     3.7 deploy 'oarword' in Tomcat8
   
-
+    3.8 install Chinese fonts, 如果使用中文字体, 需要在服务器端安装中文字体。将字体拷贝到/usr/share/fonts/msfonts, sudo fc-cache -fv
+  
 4.Run
 
 5.Contact
