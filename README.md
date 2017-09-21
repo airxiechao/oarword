@@ -35,7 +35,7 @@ A Javascript Doc/Docx Editor in Browser(Chrome only now!)
 
     3.3 copy 'WEB-INF' and 'META-INF' in 'oarword-java' into 'oarword'
 
-    3.4 build oarword-java's project and copy 'classes' into 'oarword/WEB-INF'
+    3.4 build oarword-java's project with jars in 'oarword-depend-lib.zip' and 'servlet-api.jar' and copy 'build/classes' into 'oarword/WEB-INF'
 
     3.5 unzip 'oarword-depend-lib.zip' and copy 'lib' into 'oarword/WEB-INF'
 
