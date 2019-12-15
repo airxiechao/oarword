@@ -3,7 +3,7 @@
 oarword
 =======
 
-A Javascript Based Doc/Docx Editor (Support Chrome only!)
+A Javascript Doc/Docx Editor (Support Chrome only!)
 
 1.Component
 
